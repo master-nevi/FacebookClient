@@ -1,0 +1,20 @@
+PODS:
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.22.0):
+    - Bolts (~> 1.0)
+  - FacebookClient (0.0.1):
+    - Facebook-iOS-SDK (~> 3.22)
+
+DEPENDENCIES:
+  - FacebookClient (from `../..`)
+
+EXTERNAL SOURCES:
+  FacebookClient:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 0eda8ff7120aada0a9c5f98552f7625da6c3440a
+  FacebookClient: 9da34932100406a284d7224d7a6e65375490cf0e
+
+COCOAPODS: 0.34.4

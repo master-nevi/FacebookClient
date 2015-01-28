@@ -1,25 +1,150 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="CZ8-1R-khV"/>
+                        <viewControllerLayoutGuide type="bottom" id="SR8-jr-tYa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-b4-JBJ">
+                                <rect key="frame" x="40" y="28" width="240" height="30"/>
+                                <state key="normal" title="Link with Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Unlink with Facebook"/>
+                                <connections>
+                                    <action selector="linkWithFacebookButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ydA-Xq-8tK"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXR-yq-fSd" userLabel="App ID Container">
+                                <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwH-A9-iwZ">
+                                        <rect key="frame" x="20" y="5" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lh3-eX-h8e">
+                                        <rect key="frame" x="140" y="0.0" width="140" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="1gh-Dc-KmF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FwH-A9-iwZ" firstAttribute="leading" secondItem="aXR-yq-fSd" secondAttribute="leading" constant="20" id="49i-0K-add"/>
+                                    <constraint firstItem="FwH-A9-iwZ" firstAttribute="centerY" secondItem="Lh3-eX-h8e" secondAttribute="centerY" id="4Ru-J5-kKA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lh3-eX-h8e" secondAttribute="bottom" id="HAC-Qk-Xuu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lh3-eX-h8e" secondAttribute="trailing" constant="40" id="cLq-6A-8Xs"/>
+                                    <constraint firstItem="Lh3-eX-h8e" firstAttribute="top" secondItem="aXR-yq-fSd" secondAttribute="top" id="sg6-iE-9fD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9Z-KV-Wnu" userLabel="Log Profile Container">
+                                <rect key="frame" x="0.0" y="108" width="320" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-tU-LVh">
+                                        <rect key="frame" x="20" y="0.0" width="74" height="30"/>
+                                        <state key="normal" title="Log Profile">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getUserNameButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sfb-04-4xw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6bV-tU-LVh" secondAttribute="bottom" id="TtX-fv-J13"/>
+                                    <constraint firstItem="6bV-tU-LVh" firstAttribute="top" secondItem="l9Z-KV-Wnu" secondAttribute="top" id="nKa-nJ-pWg"/>
+                                    <constraint firstItem="6bV-tU-LVh" firstAttribute="leading" secondItem="l9Z-KV-Wnu" secondAttribute="leading" constant="20" id="qVC-3E-Iir"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpG-Wo-XPB" userLabel="Post Container">
+                                <rect key="frame" x="0.0" y="146" width="320" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPQ-zV-nZP">
+                                        <rect key="frame" x="20" y="0.0" width="83" height="30"/>
+                                        <state key="normal" title="Post to Wall">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postToWallButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t1l-e3-bEg"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-fD-vs0">
+                                        <rect key="frame" x="160" y="0.0" width="140" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="GZT-vc-43Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N0X-fD-vs0" firstAttribute="centerY" secondItem="YPQ-zV-nZP" secondAttribute="centerY" id="4H3-F6-P3l"/>
+                                    <constraint firstAttribute="trailing" secondItem="N0X-fD-vs0" secondAttribute="trailing" constant="20" id="dHh-As-aP4"/>
+                                    <constraint firstItem="YPQ-zV-nZP" firstAttribute="top" secondItem="SpG-Wo-XPB" secondAttribute="top" id="hBU-iI-6P6"/>
+                                    <constraint firstAttribute="bottom" secondItem="YPQ-zV-nZP" secondAttribute="bottom" id="nut-R6-FHd"/>
+                                    <constraint firstItem="YPQ-zV-nZP" firstAttribute="leading" secondItem="SpG-Wo-XPB" secondAttribute="leading" constant="20" id="riB-ym-8hc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEr-4h-gwP">
+                                <rect key="frame" x="20" y="184" width="82" height="30"/>
+                                <state key="normal" title="Log Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logFriendsButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Jw-UF-wJ6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VvX-b4-JBJ" firstAttribute="top" secondItem="CZ8-1R-khV" secondAttribute="bottom" constant="8" id="1Oo-We-Z8e"/>
+                            <constraint firstAttribute="trailing" secondItem="aXR-yq-fSd" secondAttribute="trailing" id="1iW-jY-AQl"/>
+                            <constraint firstItem="l9Z-KV-Wnu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7K8-VS-ND7"/>
+                            <constraint firstItem="SpG-Wo-XPB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CLm-rj-ViD"/>
+                            <constraint firstAttribute="centerX" secondItem="VvX-b4-JBJ" secondAttribute="centerX" id="F4B-w7-KZc"/>
+                            <constraint firstAttribute="trailing" secondItem="SpG-Wo-XPB" secondAttribute="trailing" id="Oxp-Tc-zbU"/>
+                            <constraint firstItem="SpG-Wo-XPB" firstAttribute="top" secondItem="l9Z-KV-Wnu" secondAttribute="bottom" constant="8" id="Q0d-Gg-P8J"/>
+                            <constraint firstItem="aXR-yq-fSd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="X5P-EL-zSc"/>
+                            <constraint firstItem="l9Z-KV-Wnu" firstAttribute="top" secondItem="aXR-yq-fSd" secondAttribute="bottom" constant="8" id="Ynp-03-xlC"/>
+                            <constraint firstAttribute="trailing" secondItem="VvX-b4-JBJ" secondAttribute="trailing" constant="40" id="bR2-Oa-IWT"/>
+                            <constraint firstItem="aXR-yq-fSd" firstAttribute="top" secondItem="VvX-b4-JBJ" secondAttribute="bottom" constant="12" id="dOV-nS-F86"/>
+                            <constraint firstAttribute="trailing" secondItem="l9Z-KV-Wnu" secondAttribute="trailing" id="f2J-aR-e5e"/>
+                            <constraint firstItem="YEr-4h-gwP" firstAttribute="top" secondItem="SpG-Wo-XPB" secondAttribute="bottom" constant="8" id="np8-Dv-xA0"/>
+                            <constraint firstItem="YEr-4h-gwP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="oVJ-rp-nah"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_appIdField" destination="Lh3-eX-h8e" id="OF5-rc-1KH"/>
+                        <outlet property="_logInButton" destination="VvX-b4-JBJ" id="ydZ-o6-oH4"/>
+                        <outlet property="_postField" destination="N0X-fD-vs0" id="DUh-rQ-E0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="52" y="26"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
