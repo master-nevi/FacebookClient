@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'FacebookClient'
   s.version  = '0.0.1'
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.summary  = 'Library for using the Facebook SDK on iOS.'
   s.homepage = 'https://github.com/master-nevi/FacebookClient'
   s.author   = { "David Robles" => "master-nevi@users.noreply.github.com" }
