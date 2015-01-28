@@ -42,13 +42,17 @@
     UITapGestureRecognizer *tapToDismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tapToDismiss];
     
-    [self updateFacebookAppId];
-    
-    [MyFacebookClient loginGateWithUsePassiveBehavior:YES taskRequiringLogin:^(BOOL loggedIn) {
-        if (loggedIn) {
-            [_logInButton setSelected:YES];
-        }
-    }];
+    NSString *lastUsedFacebookAppID = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastUsedFacebookID"];
+    if (lastUsedFacebookAppID.length) {
+        _appIdField.text = lastUsedFacebookAppID;
+        [MyFacebookClient configureFacebookWithApplicationID:lastUsedFacebookAppID useV1:NO];
+        
+        [MyFacebookClient logInWithUsePassiveBehavior:YES completion:^(id profile, NSError *error) {
+            BOOL accessGranted = error ? NO : YES;
+            NSLog(@"Facebook status: %@", accessGranted ? @"Access granted" : @"Access denied");
+            [_logInButton setSelected:accessGranted];
+        }];
+    }
 }
 
 #pragma mark - IBActions
@@ -56,7 +60,12 @@
 - (IBAction)linkWithFacebookButtonTapped:(id)sender {
     [sender setSelected:![sender isSelected]];
     
-    [self updateFacebookAppId];
+    NSString *facebookAppID = _appIdField.text;
+    if (facebookAppID.length) {
+        [[NSUserDefaults standardUserDefaults] setObject:facebookAppID forKey:@"lastUsedFacebookID"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [MyFacebookClient configureFacebookWithApplicationID:facebookAppID useV1:NO];
+    }
     
     BOOL isAttemptingLogIn = [sender isSelected];
     
@@ -103,10 +112,6 @@
 }
 
 #pragma mark - Internal lib
-
-- (void)updateFacebookAppId {
-    [MyFacebookClient configureFacebookWithApplicationID:_appIdField.text useV1:NO];
-}
 
 - (void)dismissKeyboard {
     [self.view endEditing:YES];

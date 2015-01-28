@@ -91,7 +91,7 @@ static NSOperationQueue *sessionQueue = nil;
 }
 
 + (NSSet *)allPublishPermissions {
-    return [NSSet setWithArray:@[]];
+    return [NSSet setWithArray:@[@"publish_actions"]];
 }
 
 #pragma mark - Login
