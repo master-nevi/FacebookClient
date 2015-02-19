@@ -2,7 +2,7 @@ FacebookClient
 ==============
 
 #### Install:
-Add following to Podfile:
+Add following to Podfile (Currently not submitted to public PodSpec repo however if there's a demand I could):
 ```ruby
 pod 'FacebookClient', '~> 0.0.1'
 ```
